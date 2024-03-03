@@ -25,4 +25,9 @@ To download video just send its link
 and it will be downloaded automatically (some additional choice like choosing quality and file format might be needed)
 By starting download you agree to license terms. You can view it by typing /license.
 Your message content is stored only during download. Afterwards it (and downloaded video) gets deleated.
-No other data is stored."""}
+No other data is stored.""",
+
+
+
+"UrlInvalid": "Your URL seems to be invalid.",
+"UnknownService": "Bot doesnt yet support this service."}
