@@ -1,7 +1,10 @@
 # General module to download some videos
 from . import YouTube
 import validators
+storage = None
 def download(bot, language_pack, message):
+	if message.chat.id not in storage:
+		storage[message.chat.id] = {}
 	replacors = {"://www.": "://",
 		"http://": "https://"}
 	url = message.text
@@ -11,6 +14,10 @@ def download(bot, language_pack, message):
 		bot.reply_to(message, language_pack["UrlInvalid"])
 		return
 	if YouTube.check_url(url):
-		pass
+		YouTube.download(bot, language_pack, message, url)
 	else:
 		bot.reply_to(message, language_pack["UnknownService"])
+
+def register(bot, language_pack, bot_storage):
+	global storage
+	storage = bot_storage

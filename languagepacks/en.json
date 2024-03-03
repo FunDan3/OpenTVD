@@ -30,4 +30,10 @@ No other data is stored.""",
 
 
 "UrlInvalid": "Your URL seems to be invalid.",
-"UnknownService": "Bot doesnt yet support this service."}
+"UnknownService": "Bot doesnt yet support this service.",
+"YTAudioButton": "YT: Audio",
+"YTVideoButton": "YT: Video",
+"AudioOrVideo": "Do you want only audio or audio and video?",
+"FetchingStreams": "Fetching streams. Please wait a little.",
+"AlreadyDownloading": "You already are downloading some YouTube video. You cant start another download now",
+"DownloadFinished": "Content has been downloaded on server and now will be uploaded to telegram. It is expected to take nearly the same time as it did for the download."}
