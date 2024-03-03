@@ -1,0 +1,28 @@
+{"LicenseText": """OpenTVD: Telegram bot to download videos from different platfroms
+Copyright (C) 2024  Fun_Dan3
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+See <https://www.gnu.org/licenses/> to get the full copy of the license
+To contact author of the software you can send an email to dfr34560@gmail.com
+Source code: <https://github.com/FunDan3/OpenTVD/>""",
+
+
+
+"StartText": """OpenTVD is free telegram bot for downloading videos from different platforms. No ads!
+
+Currently supported platforms:
+- FUCKING NONE
+
+To download video just send its link
+and it will be downloaded automatically (some additional choice like choosing quality and file format might be needed)
+By starting download you agree to license terms. You can view it by typing /license.
+Your message content is stored only during download. Afterwards it (and downloaded video) gets deleated.
+No other data is stored."""}
