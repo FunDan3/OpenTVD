@@ -19,7 +19,7 @@ Source code: <https://github.com/FunDan3/OpenTVD/>""",
 "StartText": """OpenTVD is free telegram bot for downloading videos from different platforms. No ads!
 
 Currently supported platforms:
-- FUCKING NONE
+- YouTube
 
 To download video just send its link
 and it will be downloaded automatically (some additional choice like choosing quality and file format might be needed)

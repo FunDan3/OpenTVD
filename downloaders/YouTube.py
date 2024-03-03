@@ -6,8 +6,8 @@ storage = None
 
 def check_url(url):
 	try:
-		pytube.YouTube(url)
-		return True
+		pytube.YouTube(url) # Seems like accepts reddit but doesnt work with it.
+		return True and "youtu" in url # I seem to remember domains like m.youtube.com and youtu.be
 	except Exception:
 		return False
 
