@@ -37,4 +37,5 @@ No other data is stored.""",
 "FetchingStreams": "Fetching streams. Please wait a little.",
 "AlreadyDownloading": "You already are downloading some YouTube video. You cant start another download now",
 "DownloadFinished": "Content has been downloaded on server and now will be uploaded to telegram. It is expected to take nearly the same time as it did for the download.",
-"PickResolution": "Pick desired resolution."}
+"PickResolution": "Pick desired resolution.",
+"TooLarge": "OpenTVD doesnt yet support downloading files of this size. This is a telegram limitation"}

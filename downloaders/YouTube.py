@@ -35,8 +35,11 @@ def register(bot, language_pack, bot_storage):
 		streams = video.streams
 		streams = streams.filter(only_audio = True)
 		stream = streams.order_by("abr").first()
+		if stream.filesize > 50000000: #50 mb
+			bot.send_message(message.chat.id, language_pack["TooLarge"])
+			return
 		sent = bot.send_message(message.chat.id, "0%")
-		stream.download(filename = str(sent.chat.id)+".mp3", skip_existing = False) #Ik that it isnt .mp3
+		stream.download(f"downloads/{message.chat.id}/", filename = stream.default_filename.replace(".mp4", ".mp3"), skip_existing = False)
 
 	@bot.message_handler(func = lambda message: message.text == language_pack["YTVideoButton"])
 	def video_button(message):
@@ -50,10 +53,14 @@ def register(bot, language_pack, bot_storage):
 		markup = types.ReplyKeyboardMarkup()
 		for stream in streams:
 			if stream.resolution not in streams_resolutions:
-				streams_resolutions.append(stream.resolution)
-				button = types.KeyboardButton(stream.resolution)
-				markup.add(button)
-		bot.send_message(message.chat.id, language_pack["PickResolution"], reply_markup = markup)
+				if stream.filesize < 50000000: #50 mb
+					streams_resolutions.append(stream.resolution)
+					button = types.KeyboardButton(stream.resolution)
+					markup.add(button)
+		if streams_resolutions:
+			bot.send_message(message.chat.id, language_pack["PickResolution"], reply_markup = markup)
+		else:
+			bot.send_message(message.chat.id, language_pack["TooLarge"])
 
 	def download_video(message, quality):
 		markup = types.ReplyKeyboardRemove(selective = False)
@@ -75,7 +82,7 @@ def register(bot, language_pack, bot_storage):
 		streams = video.streams
 		stream = streams.filter(progressive = True).filter(res = quality).order_by("fps").first()
 		sent = bot.send_message(message.chat.id, "0%")
-		stream.download(filename = str(sent.chat.id)+".mp4", skip_existing = False) #Ik that it might not be .mp4
+		stream.download(f"downloads/{message.chat.id}/", skip_existing = False)
 
 	@bot.message_handler(func = lambda message: message.text == "144p")
 	def p144(message):
