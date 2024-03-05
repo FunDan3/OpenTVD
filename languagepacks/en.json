@@ -38,4 +38,6 @@ No other data is stored.""",
 "AlreadyDownloading": "You already are downloading some YouTube video. You cant start another download now",
 "DownloadFinished": "Content has been downloaded on server and now will be uploaded to telegram. It is expected to take nearly the same time as it did for the download.",
 "PickResolution": "Pick desired resolution.",
-"TooLarge": "OpenTVD doesnt yet support downloading files of this size. This is a telegram limitation"}
+"TooLarge": "OpenTVD doesnt yet support downloading files of this size. This is a telegram limitation",
+"DownloadStarted": "This service doesnt support progressbar but download has been started.",
+"BrokenRedditVideo": "Seems like this post has no video or it is NSFW. Download aborted."}

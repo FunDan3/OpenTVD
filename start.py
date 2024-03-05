@@ -7,6 +7,7 @@ import main
 bot_args = [
 	("en", secrets.telegram.token_en),
 	("ru", secrets.telegram.token_ru),
+	#("en", secrets.telegram.token_test),
 ]
 
 jobs = []

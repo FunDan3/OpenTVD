@@ -1,5 +1,6 @@
 # General module to download some videos
 from . import YouTube
+from . import Reddit
 import validators
 storage = None
 def download(bot, language_pack, message):
@@ -13,8 +14,10 @@ def download(bot, language_pack, message):
 	if not validators.url(url):
 		bot.reply_to(message, language_pack["UrlInvalid"])
 		return
-	if YouTube.check_url(url):
+	if YouTube.check_url(bot, message, language_pack, url):
 		YouTube.download(bot, language_pack, message, url)
+	elif Reddit.check_url(bot, message, language_pack, url):
+		Reddit.download(bot, language_pack, message, url)
 	else:
 		bot.reply_to(message, language_pack["UnknownService"])
 

@@ -4,10 +4,10 @@ import os
 
 storage = None
 
-def check_url(url):
+def check_url(bot, message, language_pack, url):
 	try:
 		pytube.YouTube(url) # Seems like accepts reddit but doesnt work with it.
-		return True and "youtu" in url # I seem to remember domains like m.youtube.com and youtu.be
+		return "youtu" in url # I seem to remember domains like m.youtube.com and youtu.be
 	except Exception:
 		return False
 
