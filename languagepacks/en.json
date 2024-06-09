@@ -40,4 +40,7 @@ No other data is stored.""",
 "PickResolution": "Pick desired resolution.",
 "TooLarge": "OpenTVD doesnt yet support downloading files of this size. This is a telegram limitation",
 "DownloadStarted": "This service doesnt support progressbar but download has been started.",
-"BrokenRedditVideo": "Seems like this post has no video or it is NSFW. Download aborted."}
+"BrokenRedditVideo": "Seems like this post has no video or it is NSFW. Download aborted.",
+"SendErrorReport": "Something went wrong. Do you want to send detailed report to developer? This will send url that you have tried to download.",
+"Yes": "Yes",
+"No": "No"}
