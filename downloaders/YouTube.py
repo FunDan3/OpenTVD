@@ -1,3 +1,4 @@
+from components import error_handler
 from telebot import types
 import pytube
 import os
@@ -15,6 +16,7 @@ def register(bot, language_pack, bot_storage):
 	global storage
 	storage = bot_storage
 	@bot.message_handler(func = lambda message: message.text == language_pack["YTAudioButton"])
+	@error_handler.memreset()
 	def audio_button(message):
 		markup = types.ReplyKeyboardRemove(selective = False)
 		bot.send_message(message.chat.id, language_pack["FetchingStreams"], reply_markup = markup)
@@ -42,6 +44,7 @@ def register(bot, language_pack, bot_storage):
 		stream.download(f"downloads/{message.chat.id}/", filename = stream.default_filename.replace(".mp4", ".mp3"), skip_existing = False)
 
 	@bot.message_handler(func = lambda message: message.text == language_pack["YTVideoButton"])
+	@error_handler.memreset()
 	def video_button(message):
 		markup = types.ReplyKeyboardRemove(selective = False)
 		bot.send_message(message.chat.id, language_pack["FetchingStreams"], reply_markup = markup)
@@ -62,6 +65,7 @@ def register(bot, language_pack, bot_storage):
 		else:
 			bot.send_message(message.chat.id, language_pack["TooLarge"])
 
+	@error_handler.memreset()
 	def download_video(message, quality):
 		markup = types.ReplyKeyboardRemove(selective = False)
 		bot.send_message(message.chat.id, language_pack["FetchingStreams"], reply_markup = markup)
@@ -85,24 +89,32 @@ def register(bot, language_pack, bot_storage):
 		stream.download(f"downloads/{message.chat.id}/", skip_existing = False)
 
 	@bot.message_handler(func = lambda message: message.text == "144p")
+	@error_handler.memreset()
 	def p144(message):
 		download_video(message, "144p")
 	@bot.message_handler(func = lambda message: message.text == "240p")
+	@error_handler.memreset()
 	def p240(message):
 		download_video(message, "240p")
 	@bot.message_handler(func = lambda message: message.text == "360p")
+	@error_handler.memreset()
 	def p360(message):
 		download_video(message, "360p")
 	@bot.message_handler(func = lambda message: message.text == "480p")
+	@error_handler.memreset()
 	def p480(message):
 		download_video(message, "480p")
 	@bot.message_handler(func = lambda message: message.text == "720p")
+	@error_handler.memreset()
 	def p720(message):
 		download_video(message, "720p")
 	@bot.message_handler(func = lambda message: message.text == "1080p")
+	@error_handler.memreset()
 	def p1080(message):
 		download_video(message, "1080p")
 	# There is no progressive streams after 1080p
+
+@error_handler.memreset()
 def download(bot, language_pack, message, url):
 	if "YouTube" in storage[message.chat.id] and storage[message.chat.id]["YouTube"]["locked"]:
 		bot.reply_to(message, language_pack["AlreadyDownloading"])

@@ -1,8 +1,11 @@
 # General module to download some videos
 from . import YouTube
 from . import Reddit
+from components import error_handler
 import validators
-storage = None
+storage = {}
+
+@error_handler.memreset()
 def download(bot, language_pack, message):
 	if message.chat.id not in storage:
 		storage[message.chat.id] = {}

@@ -1,8 +1,10 @@
 from redvid import Downloader
+from components import error_handler
 import os
 
 storage = None
 
+@error_handler.memreset()
 def check_url(bot, message, language_pack, url):
 	try:
 		video = Downloader(min_q = True, path = f"./downloads/{message.chat.id}/")
@@ -18,6 +20,7 @@ def register(bot, language_pack, bot_storage):
 	global storage
 	storage = bot_storage
 
+@error_handler.memreset()
 def download(bot, language_pack, message, url):
 	filename = f"{message.id}.mp4"
 	video = Downloader(max_q = True, path = f"./downloads/{message.chat.id}/", filename = filename)

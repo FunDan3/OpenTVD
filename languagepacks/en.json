@@ -2,8 +2,7 @@
 Copyright (C) 2024  Fun_Dan3
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+the Free Software Foundation, version 3 of the License.
 
 This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -41,6 +40,4 @@ No other data is stored.""",
 "TooLarge": "OpenTVD doesnt yet support downloading files of this size. This is a telegram limitation",
 "DownloadStarted": "This service doesnt support progressbar but download has been started.",
 "BrokenRedditVideo": "Seems like this post has no video or it is NSFW. Download aborted.",
-"SendErrorReport": "Something went wrong. Do you want to send detailed report to developer? This will send url that you have tried to download.",
-"Yes": "Yes",
-"No": "No"}
+"Error": "Something went wrong. Report has been sent to developer."}
